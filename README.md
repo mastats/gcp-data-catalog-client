@@ -1,5 +1,6 @@
 # gcp-data-catalog-client
-Client to manage tags using the GCP data_catalog client
+* Client to manage tags using the GCP data_catalog client
+* Interacting with the Data Catalog client requires a GCP service account key. Read this: https://cloud.google.com/iam/docs/keys-create-delete
 
 ## Usage
 1. Add & update BigQuery tables metadata. E.g. A task in an Airflow ETL DAG to add metadata about data ingestion or governance.
@@ -19,7 +20,8 @@ tag_client = TagClient(
     dataset_id="your-dataset-id",
     table_id="your-table-id",
     location="your-location",
-    tag_template_id="your-tag-template-id"
+    tag_template_id="your-tag-template-id",
+    key_path="/path/to/your/key/file.json"
 )
 
 # Create a tag instance for the selected table
