@@ -14,7 +14,9 @@
 ### Example
 
 ```
-# Create an instance of the TagClient class
+from tag_client import TagClient
+
+# TagClient init
 tag_client = TagClient(
     project_id="project-id",
     dataset_id="dataset-id",
@@ -24,7 +26,7 @@ tag_client = TagClient(
     key_path="/path/to/key/file.json"
 )
 
-# Create a tag instance for the selected table
+# Create a Tag instance for the selected table & Tag template
 tag_instance = tag_client.create_tag_instance({
     "data_ingestion_owner": "John Doe",
     "rows_processed": 123,
@@ -32,7 +34,7 @@ tag_instance = tag_client.create_tag_instance({
     "final_report_name": sales_market_01
 })
 
-# Update table existing tag instance's fields
+# Update table existing Tag instance fields
 updated_tag_instance = tag_client.update_tag_instance({
     "field1": "new-value",
     "field2": 456
