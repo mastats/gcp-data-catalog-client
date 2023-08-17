@@ -3,8 +3,8 @@
 * Interacting with the Data Catalog client requires a GCP service account key. Read this: https://cloud.google.com/iam/docs/keys-create-delete
 
 ## Usage
-1. Add & update BigQuery tables metadata. E.g. A task in an Airflow ETL DAG to add metadata about data ingestion or governance.
-2. Retrieve tags assigned to different tables and use metadata to build a report
+* Add & update BigQuery tables metadata. E.g. A task in an Airflow ETL DAG to add metadata about data ingestion or governance.
+* Retrieve tags assigned to different tables and use metadata to build a report
 
 ### Basic usage
 1. Add a Tag instance to a BigQuery table using an existing Tag Template
@@ -16,12 +16,12 @@
 ```
 # Create an instance of the TagClient class
 tag_client = TagClient(
-    project_id="your-project-id",
-    dataset_id="your-dataset-id",
-    table_id="your-table-id",
-    location="your-location",
-    tag_template_id="your-tag-template-id",
-    key_path="/path/to/your/key/file.json"
+    project_id="project-id",
+    dataset_id="dataset-id",
+    table_id="table-id",
+    location="tag-template-location",
+    tag_template_id="tag-template-id",
+    key_path="/path/to/key/file.json"
 )
 
 # Create a tag instance for the selected table
